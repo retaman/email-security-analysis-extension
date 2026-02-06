@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>MailSafe</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <div class="title">MailSafe</div>
+        <div class="subtitle">Análisis a demanda</div>
+      </div>
+
+      <button id="analyzeBtn" class="btn">Analizar este correo</button>
+      
+      <div class="upload">
+        <label class="uploadLabel">o analizar archivo .eml</label>
+        <input id="emlFile" type="file" accept=".eml,message/rfc822" />
+      </div>
+
+      <div id="status" class="status hidden">
+        <div id="verdictPill" class="pill">—</div>
+        <div id="reason1" class="reason"></div>
+        <div id="reason2" class="reason"></div>
+
+        <details class="details">
+          <summary>Ver detalles</summary>
+          <div class="kv"><span>Proveedor:</span> <span id="provider">—</span></div>
+          <div class="kv"><span>Dominio remitente:</span> <span id="senderDomain">—</span></div>
+          <div class="kv"><span>Dominios links:</span> <span id="linkDomains">—</span></div>
+        </details>
+      </div>
+
+      <div id="hint" class="hint">
+        Abre un correo en Gmail o Outlook Web y presiona “Analizar”.
+      </div>
+
+      <div id="error" class="error hidden"></div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

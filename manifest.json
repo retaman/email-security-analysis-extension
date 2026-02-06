@@ -1,0 +1,33 @@
+﻿{
+  "manifest_version": 3,
+  "name": "MailSafe MVP",
+  "short_name": "MailSafe",
+  "version": "0.1.0",
+  "description": "Analiza correos a demanda en Gmail/Outlook Web y muestra un semáforo de riesgo.",
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://outlook.live.com/*",
+    "https://outlook.office.com/*"
+  ],
+  "action": {
+    "default_title": "Analizar correo",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*",
+        "https://outlook.live.com/*",
+        "https://outlook.office.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
